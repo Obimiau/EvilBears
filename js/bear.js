@@ -1,0 +1,5 @@
+var bear = [];
+
+function Bears (){
+
+}
