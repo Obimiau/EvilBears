@@ -32,7 +32,7 @@ Salmon.prototype.move = function() {
     return this.updatePos();
   }
   setTimeout( function() {
-    this.template.remove();
+    this.template.className = this.template.className + ' happy-salmon';
   }.bind(this), 500);
 };
 
@@ -46,7 +46,6 @@ Salmon.prototype.updatePos = function() {
 
 };
 
-//Trabajando
 
 Salmon.prototype.receiveDamage = function() {
   var x = this.xPosition;
@@ -54,18 +53,18 @@ Salmon.prototype.receiveDamage = function() {
 
   if(this.board[x-1] != null && this.board[x-1][y] === 'B') {
     this.life = this.life-10;
-  } else if (this.board[x][y+1] != null && this.board[x][y+1] === 'B') {
+  } if (this.board[x][y+1] != null && this.board[x][y+1] === 'B') {
     this.life = this.life-10;
-  } else if (this.board[x+1] != null && this.board[x+1][y] === 'B') {
+  } if (this.board[x+1] != null && this.board[x+1][y] === 'B') {
     this.life = this.life-10;
-  } else if (this.board[x][y-1] != null && this.board[x][y-1] === 'B') {
+  } if (this.board[x][y-1] != null && this.board[x][y-1] === 'B') {
     this.life = this.life-10;
   }
   this.checkDeath();
 };
 
 Salmon.prototype.checkDeath = function() {
-  if (this.life>0){ //continúa moviéndose
+  if (this.life>0){
   } else {
   this.template.remove();
   }

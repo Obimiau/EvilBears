@@ -9,25 +9,24 @@
 
 <body>
 
-
     <div class="riverBoard">
       <div class="board"> </div>
     </div>
 
+    <div class="start">
 
-<div class="main">
-    <div class="points">
-      <h1> Points </h1>
+      <div class="startBear">
+        <img src="images/pixel_bear.png">
+      </div>
+
+      <button class="startButton" onclick="startGame()"> START </button>
+      <input class="reset" type="button" value="RESET" onClick="window.location.reload()">
     </div>
 
-    <div class="createBear">
-      <img src="images/bluebear.png">
-    </div>
-  </div>
+    <span class="counter">0</span>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type='text/javascript' src='js/salmon.js'></script>
-    <script type='text/javascript' src='js/bear.js'></script>
     <script type='text/javascript' src='js/board.js'></script>
     <script type='text/javascript' src='js/main.js'></script>
 </body>

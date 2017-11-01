@@ -11,7 +11,7 @@ var board = [
   ['G','G','G','G','G','G','G','G','G','G'],
   ];
 
-  var bearCounter = 0;
+  var money = 15;
   var b = document.querySelector(".board");
 
   drawBoard = function() {
@@ -40,20 +40,40 @@ var board = [
         // ahora puedo acceder a donde esta gracias a los data
          var x = element.getAttribute('data-x');
          var y = element.getAttribute('data-y');
-
+         if (money>=10){
          // ahora, con x e y, cambio la letra de array a B de Bear
          board[x][y] = 'B';
-         bearCounter = bearCounter + 1;
+         money=money-10;
          // como el array ha cambiado, tengo que volver a llamar a la funcion para que pinte de nuevo el mapa
          drawBoard();
-        // ahora ya puedo hacer, que cada vez que el salmon se mueve, si alrededor tengo un 'B' la vida del salmon baje.
+       }// ahora ya puedo hacer, que cada vez que el salmon se mueve, si alrededor tengo un 'B' la vida del salmon baje.
       };
      });
    };
+  drawBoard();
 
-    drawBoard();
-  var vida = 40;
-  setInterval(function(){
-    vida = vida + 1;
+  function startGame() {
+  var vida = 10;
+  var intervalo = setInterval(function(){
+    vida = vida + 5;
     var salmon1 = new Salmon(1,0, board,vida);
   },2500);
+  count(intervalo);
+  };
+
+  function count (interval){
+    var inter = setInterval(function(){
+      money++;
+      document.querySelector(".counter").innerHTML=money;
+      var happys = document.querySelectorAll(".happy-salmon");
+      if(happys && happys.length === 1) {
+        alert("escaparon wei");
+        document.querySelectorAll('.salmon').forEach(function(salmon) {
+          clearInterval(interval);
+          clearInterval(inter);
+          salmon.remove();
+        })
+      }
+    },1000);
+
+  };
