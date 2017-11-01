@@ -12,7 +12,7 @@ var board = [
   ];
 
   var bearCounter = 0;
-  var b = document.querySelector(".riverBoard");
+  var b = document.querySelector(".board");
 
   drawBoard = function() {
     // PONGO LOS DATA-X Y DATA-Y PARA QUE LUEGO AL CLICKAR SEPA DONDE ESTÁ EL CUADRADO
@@ -25,7 +25,7 @@ var board = [
       } else if(board[x][y] === 'R' || board[x][y] === 'X') {
         row = row + '<div class="square river" data-x="'+ x +'"  data-y="'+ y +'"></div>';
       } else {
-        row = row + '<div class="square" data-x="'+ x +'"  data-y="'+ y +'"><div class="bear"></div></div>';
+        row = row + '<div class="square bear-grass" data-x="'+ x +'"  data-y="'+ y +'"><div class="bear"></div></div>';
       }
     }
     row = row + '</div>';
@@ -52,5 +52,8 @@ var board = [
    };
 
     drawBoard();
-
-  var salmon1 = new Salmon(1,0, board);
+  var vida = 40;
+  setInterval(function(){
+    vida = vida + 1;
+    var salmon1 = new Salmon(1,0, board,vida);
+  },2500);
