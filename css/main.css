@@ -17,10 +17,12 @@ body {
   margin: 0;
 }
 .riverBoard {
+  margin: 35px;
   width: 80%;
   height: 80vh;
   position: relative;
   display: inline-block;
+  border: 3px solid black;
 }
 
 .board {
@@ -134,8 +136,8 @@ body {
 
 .gameover {
 position: fixed;
-margin-left: 290px;
-margin-top: 140px;
+margin-left: 320px;
+margin-top: 190px;
 background: white;
 width: 40%;
 height: 40vh;
@@ -152,8 +154,8 @@ justify-content: center;
 
 .salmonswin {
   position: fixed;
-  margin-left: 290px;
-  margin-top: 140px;
+  margin-left: 320px;
+  margin-top: 190px;
   background: rgb(249, 252, 249);
   width: 40%;
   height: 40vh;
