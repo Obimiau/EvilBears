@@ -11,6 +11,7 @@ var board = [
   ['G','G','G','G','G','G','G','G','G','G'],
   ];
 
+
   var money = 15;
   var b = document.querySelector(".board");
 
@@ -59,7 +60,7 @@ var board = [
       vida = vida + 5;
       var salmon1 = new Salmon(1,0, board,vida);
       salmones = salmones + 1;
-      if(salmones === 10) {
+      if(salmones === 75) {
         clearInterval(intervalo);
         $(".salmonswin").removeClass("hide");
         document.querySelectorAll('.salmon').forEach(function(salmon) {
@@ -68,7 +69,6 @@ var board = [
       }
     },2500);
     count(intervalo);
-
     };
 
 

@@ -51,17 +51,16 @@ Salmon.prototype.receiveDamage = function() {
   var x = this.xPosition;
   var y = this.yPosition;
 
-  if(this.board[x-1] != null && this.board[x-1][y] === 'B') {
-    this.life = this.life-10;
-  } if (this.board[x][y+1] != null && this.board[x][y+1] === 'B') {
-    this.life = this.life-10;
-  } if (this.board[x+1] != null && this.board[x+1][y] === 'B') {
-    this.life = this.life-10;
-  } if (this.board[x][y-1] != null && this.board[x][y-1] === 'B') {
-    this.life = this.life-10;
+  if((this.board[x-1] != null && this.board[x-1][y] === 'B') ||
+  (this.board[x][y+1] != null && this.board[x][y+1] === 'B')||
+  (this.board[x+1] != null && this.board[x+1][y] === 'B') ||
+  (this.board[x][y-1] != null && this.board[x][y-1] === 'B')) {
+    this.life = this.life - 10;
   }
   this.checkDeath();
 };
+
+
 
 Salmon.prototype.checkDeath = function() {
   if (this.life>0){
