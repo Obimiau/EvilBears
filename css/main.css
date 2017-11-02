@@ -50,7 +50,7 @@ body {
 }
 
 .square.river {
-  background: url("http://4.bp.blogspot.com/-9F5e4P9JxwE/UlAYhVwdWUI/AAAAAAAACYI/1VlbEE5O0aI/s400/Water_WaveAnimation_16frames_SeamlessTest.gif");
+  background: url("../Images/Water-animation.gif");
 }
 
 .points {
@@ -76,7 +76,7 @@ body {
 }
 
 .bear {
-  background: url("https://vignette.wikia.nocookie.net/pixelpeople/images/5/58/Brown_Bear.png/revision/latest?cb=20130411194643");
+  background: url("../Images/Brown_Bear.png");
   background-size: cover;
   width: 40px;
   height: 40px;
@@ -121,4 +121,57 @@ body {
 
 .counter {
   font-size: 30px;
+  padding-left: 40px;
+
+}
+
+.bpoints {
+  font-size: 30px;
+  height: 100px;
+  width: 100px;
+  padding-top: 30px;
+}
+
+.gameover {
+position: fixed;
+margin-left: 290px;
+margin-top: 140px;
+background: white;
+width: 40%;
+height: 40vh;
+top: 0;
+left: 0;
+border-radius: 15px;
+border: 3px solid black;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+
+
+.salmonswin {
+  position: fixed;
+  margin-left: 290px;
+  margin-top: 140px;
+  background: rgb(249, 252, 249);
+  width: 40%;
+  height: 40vh;
+  top: 0;
+  left: 0;
+  border-radius: 15px;
+  border: 3px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.salmonswin img {
+  height: 150px;
+  width: 220px;
+}
+
+.hide {
+  display: none;
+  float: center;
 }

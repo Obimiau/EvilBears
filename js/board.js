@@ -53,26 +53,40 @@ var board = [
   drawBoard();
 
   function startGame() {
-  var vida = 10;
-  var intervalo = setInterval(function(){
-    vida = vida + 5;
-    var salmon1 = new Salmon(1,0, board,vida);
-  },2500);
-  count(intervalo);
-  };
+    var vida = 10;
+    var salmones = 0;
+    var intervalo = setInterval(function(){
+      vida = vida + 5;
+      var salmon1 = new Salmon(1,0, board,vida);
+      salmones = salmones + 1;
+      if(salmones === 5) {
+        clearInterval(intervalo);
+        $(".salmonswin").removeClass("hide");
+        document.querySelectorAll('.salmon').forEach(function(salmon) {
+        salmon.remove();
+
+        });
+      }
+    },2500);
+    count(intervalo);
+
+    };
+
+
 
   function count (interval){
     var inter = setInterval(function(){
       money++;
       document.querySelector(".counter").innerHTML=money;
       var happys = document.querySelectorAll(".happy-salmon");
-      if(happys && happys.length === 1) {
-        alert("escaparon wei");
+      if(happys && happys.length === 4) {
+        $(".gameover").removeClass("hide");
         document.querySelectorAll('.salmon').forEach(function(salmon) {
           clearInterval(interval);
           clearInterval(inter);
           salmon.remove();
-        })
+
+        });
       }
     },1000);
 

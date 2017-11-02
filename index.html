@@ -21,14 +21,28 @@
 
       <button class="startButton" onclick="startGame()"> START </button>
       <input class="reset" type="button" value="RESET" onClick="window.location.reload()">
+
+      <div class="bpoints">
+        <span class=points>Bear Points</span>
+        <br>
+        <span class="counter">0</span>
+      </div>
     </div>
 
-    <span class="counter">0</span>
+    <div class="gameover hide">
+      <h1> No dinner today!</h1>
+      <img src="Images/cryingbear.jpg">
+    </div>
+
+    <div class="salmonswin hide">
+      <h1> Mission accomplished! </h1>
+      <img src="Images/dancingbear.gif">
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type='text/javascript' src='js/salmon.js'></script>
     <script type='text/javascript' src='js/board.js'></script>
-    <script type='text/javascript' src='js/main.js'></script>
+
 </body>
 
 </html>
