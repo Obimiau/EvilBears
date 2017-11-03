@@ -60,7 +60,7 @@ var board = [
       vida = vida + 5;
       var salmon1 = new Salmon(1,0, board,vida);
       salmones = salmones + 1;
-      if(salmones === 8) {
+      if(salmones === 10) {
         clearInterval(intervalo);
         $(".salmonswin").removeClass("hide");
         document.querySelectorAll('.salmon').forEach(function(salmon) {
